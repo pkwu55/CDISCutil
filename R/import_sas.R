@@ -1,4 +1,4 @@
-#' Wrapper function to read SAS datasets in either sas7bdat or xpt
+#' Read SAS data set in either sas7bdat or xpt
 #' from a directory
 #'
 #' @param lib location for xpt/sas7bdat datasets
@@ -37,7 +37,9 @@ import_sas <- function(lib, dst, ext = c("any")){
     print(paste0("dataset", dst_name, "does not exist in", lib))
     break
   } else {
-    #print(dst_fname)
-    return(haven::read_sas(dst_fname))
+    if (grepl("\\.xpt$", dst_fname, ignore.case = TRUE)){
+      return(haven::read_xpt(dst_fname))
+    }else
+      return(haven::read_sas(dst_fname))
   }
 }
