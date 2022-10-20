@@ -5,10 +5,13 @@
 #' @param dst dataset name
 #' @param ext extension, could be xpt or sas7bdat, if any then automatically select one
 #' @return sas dataset read by haven::read_sas
+#' @export
+#'
 #' @examples
 #' \dontrun{
 #' adsl <- import_sas(adam, adsl)
 #' }
+
 import_sas <- function(lib, dst, ext = c("any")){
   if (!file.exists(lib)){
     print("lib does not exist")
