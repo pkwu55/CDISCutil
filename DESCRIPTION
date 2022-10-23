@@ -1,10 +1,11 @@
 Package: CDISCutil
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Utility Tools for CDISC Standard Data Sets
+Version: 0.1
 Authors@R: 
     person("Peikun", "Wu", , "wpipikun@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package is designed to aid working with SAS datasets in R. The main function is to 
+    build SDTMPlus data set. Some other minor utility functions are also included. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
