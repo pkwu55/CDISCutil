@@ -22,7 +22,7 @@ build_sdtm <- function (lib, dst, ext = c("any")){
     return(main_dm)
   } else {
     if (all(supp_dm$IDVAR != '')){
-      supp_dm_gp <- dplyr::group_split(supp_dm, "IDVAR") # spliy by IDVAR
+      supp_dm_gp <- dplyr::group_split(supp_dm, supp_dm$IDVAR) # spliy by IDVAR
 
       by_id <- unlist(lapply(supp_dm_gp,
                              function(x) select(x, "IDVAR") %>%
