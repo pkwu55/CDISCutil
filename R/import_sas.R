@@ -9,18 +9,18 @@
 #'
 #' @examples
 #' \dontrun{
-#' adsl <- import_sas(adam, adsl)
+#' adsl <- import_sas(adam, "adsl")
 #' }
 
 import_sas <- function(lib, dst, ext = c("any")){
   if (!file.exists(lib)){
-    print("lib does not exist")
-    break
+    print("library does not exist")
+    return(0)
   }
 
   if (is.null(dst)){
     print("please provide dataset name")
-    break
+    return(0)
   }
 
   if (ext != "any"){
@@ -34,8 +34,8 @@ import_sas <- function(lib, dst, ext = c("any")){
   dst_fname <- file.path(lib, dst_name)
 
   if (!file.exists(dst_fname)){
-    print(paste0("dataset", dst_name, "does not exist in", lib))
-    break
+    print(paste("dataset", dst, "does not exist in", lib))
+    return(0)
   } else {
     if (grepl("\\.xpt$", dst_fname, ignore.case = TRUE)){
       return(haven::read_xpt(dst_fname))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/import_sas.R
 \name{import_sas}
 \alias{import_sas}
-\title{Wrapper function to read SAS datasets in either sas7bdat or xpt
+\title{Read SAS data set in either sas7bdat or xpt
 from a directory}
 \usage{
 import_sas(lib, dst, ext = c("any"))
@@ -18,11 +18,11 @@ import_sas(lib, dst, ext = c("any"))
 sas dataset read by haven::read_sas
 }
 \description{
-Wrapper function to read SAS datasets in either sas7bdat or xpt
+Read SAS data set in either sas7bdat or xpt
 from a directory
 }
 \examples{
 \dontrun{
-adsl <- import_sas(adam, adsl)
+adsl <- import_sas(adam, "adsl")
 }
 }
