@@ -27,7 +27,7 @@ import_sas <- function(lib, dst, ext = c("any")){
     dst_name = paste(dst, ext, sep = ".")
   } else {
     ls_lib <- list.files(lib)
-    dst_name <- ls_lib[grepl(dst, ls_lib)]
+    dst_name <- ls_lib[grepl(paste0('^',dst), ls_lib)]
     dst_name <- dst_name[1] #sas7bdat will have priority
   }
 
